@@ -17,6 +17,7 @@ class User(BaseClass):
     username = Column(String, unique=True, index=True, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
+    is_staff = Column(Boolean,default =False)
     items = relationship("Item", back_populates="owner")
 
 
